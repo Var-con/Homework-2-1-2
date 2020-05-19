@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var redLightView: UIView!
+    @IBOutlet weak var yellowLighView: UIView!
+    @IBOutlet weak var greenLightView: UIView!
+    @IBOutlet weak var startButtonOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        redLightView.alpha = 0.3
+        yellowLighView.alpha = 0.3
+        greenLightView.alpha = 0.3
+        
+        
     }
 
-
+    @IBAction func startButton(_ sender: UIButton) {
+    }
+    
 }
 
