@@ -19,12 +19,33 @@ class ViewController: UIViewController {
         redLightView.alpha = 0.3
         yellowLighView.alpha = 0.3
         greenLightView.alpha = 0.3
+        startButtonOutlet.layer.cornerRadius = 5
         
+        redLightView.layer.cornerRadius = 60
+        yellowLighView.layer.cornerRadius = 60
+        greenLightView.layer.cornerRadius = 60
         
     }
-
-    @IBAction func startButton(_ sender: UIButton) {
-    }
+    @IBAction func startButtonAction(_ sender: UIButton) {
+        if redLightView.alpha < 1 && yellowLighView.alpha < 1 && greenLightView.alpha < 1{
+            
+            startButtonOutlet.setTitle("Next", for: .normal)
+            redLightView.alpha = 1.0
+        
+        } else if redLightView.alpha == 1 {
+            yellowLighView.alpha = 1
+            redLightView.alpha = 0.3
+        } else if yellowLighView.alpha == 1 {
+            greenLightView.alpha = 1
+            yellowLighView.alpha = 0.3
+        } else {
+            redLightView.alpha = 1
+            greenLightView.alpha = 0.3
+        }
+        }
     
+    
+        
 }
+
 
